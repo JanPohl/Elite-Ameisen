@@ -1,0 +1,12 @@
+C:\Users\jan-p\Documents\Game Design\Programmierung\Warmeisen\Warmeisen2\Warmeisen2\bin\AntMe.Player.Warmeisen2.dll
+C:\Users\jan-p\Documents\Game Design\Programmierung\Warmeisen\Warmeisen2\Warmeisen2\bin\AntMe.Player.Warmeisen2.pdb
+C:\Users\jan-p\Documents\Game Design\Programmierung\Warmeisen\Warmeisen2\Warmeisen2\bin\AntMe.SharedComponents.dll
+C:\Users\jan-p\Documents\Game Design\Programmierung\Warmeisen\Warmeisen2\Warmeisen2\bin\AntMe.Simulation.dll
+C:\Users\jan-p\Documents\Game Design\Programmierung\Warmeisen\Warmeisen2\Warmeisen2\bin\AntMe.SharedComponents.xml
+C:\Users\jan-p\Documents\Game Design\Programmierung\Warmeisen\Warmeisen2\Warmeisen2\bin\AntMe.Simulation.xml
+C:\Users\jan-p\Documents\Game Design\Programmierung\Warmeisen\Warmeisen2\Warmeisen2\bin\de\AntMe.SharedComponents.resources.dll
+C:\Users\jan-p\Documents\Game Design\Programmierung\Warmeisen\Warmeisen2\Warmeisen2\bin\de\AntMe.Simulation.resources.dll
+C:\Users\jan-p\Documents\Game Design\Programmierung\Warmeisen\Warmeisen2\Warmeisen2\obj\Debug\Warmeisen2.csprojResolveAssemblyReference.cache
+C:\Users\jan-p\Documents\Game Design\Programmierung\Warmeisen\Warmeisen2\Warmeisen2\obj\Debug\Warmeisen2.csproj.CoreCompileInputs.cache
+C:\Users\jan-p\Documents\Game Design\Programmierung\Warmeisen\Warmeisen2\Warmeisen2\obj\Debug\AntMe.Player.Warmeisen2.dll
+C:\Users\jan-p\Documents\Game Design\Programmierung\Warmeisen\Warmeisen2\Warmeisen2\obj\Debug\AntMe.Player.Warmeisen2.pdb
