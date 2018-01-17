@@ -82,7 +82,7 @@ namespace AntMe.Player.Warmeisen2
         //private int x = 0;
         //private int y = 0;
         private Bau bau = null;
-        private Spielobjekt ZielOptimized = null;
+        public Spielobjekt ZielOptimized = null;
         private bool registered = false;
         private bool registeredapfel = false;
         //private bool registeredwanze = false;
@@ -144,7 +144,7 @@ namespace AntMe.Player.Warmeisen2
             if (!registeredapfel && !registered && Kaste == "Verteidiger")
             {
                 //Ticketmanager.Instance.RegisterAmeise(this);
-               // registered = true;
+                // registered = true;
                 Apfelticketmanager.InstanceApfel.RegisterApfelAmeise(this);
                 registeredapfel = true;
             }
@@ -152,7 +152,7 @@ namespace AntMe.Player.Warmeisen2
             if (Kaste == "Verteidiger")
             {
                 ticketapfel = Apfelticketmanager.InstanceApfel.GetApfelTicket();
-               // ticket = Ticketmanager.Instance.GetTicket();
+                // ticket = Ticketmanager.Instance.GetTicket();
             }
 
 
@@ -314,16 +314,16 @@ namespace AntMe.Player.Warmeisen2
         /// </summary>
         public override void Tick()
         {
+
             if (ZielOptimized != null)
             {
-                int distance = Koordinate.BestimmeEntfernung(this, ZielOptimized);
-                if (distance < Sichtweite)
+                //int distance = Koordinate.BestimmeEntfernung(this, ZielOptimized);
+                if (/*distance < Sichtweite*/Koordinate.BestimmeEntfernung(this, ZielOptimized) < Sichtweite)
                 {
                     GeheZuZiel(ZielOptimized);
                     ZielOptimized = null;
 
                 }
-                
             }
 
             if (Reichweite - ZurückgelegteStrecke - 20 < EntfernungZuBau)
@@ -510,7 +510,7 @@ namespace AntMe.Player.Warmeisen2
             //}
 
             if (AnzahlAmeisenDerSelbenKasteInSichtweite >= 5 && Kaste == "Verteidiger")
-            {               
+            {
                 GreifeAn(wanze);
             }
 
@@ -528,13 +528,13 @@ namespace AntMe.Player.Warmeisen2
 
             if (Kaste == "ZuckerSammler")
             {
-               
+
                 LasseNahrungFallen();
                 GreifeAn(ameise);
             }
             else if (AktuelleLast == 0)
             {
-               
+
                 GreifeAn(ameise);
             }
 
@@ -561,14 +561,16 @@ namespace AntMe.Player.Warmeisen2
         }
 
         #endregion
-        
-        private void GeheZuZielOptimized(Spielobjekt spielobject)
+
+        private void GeheZuZielOptimized(Spielobjekt spielobjekt)
         {
-            int distance = Koordinate.BestimmeEntfernung(this, spielobject);
-            int angle = Koordinate.BestimmeRichtung(this, spielobject);
-            GeheGeradeaus(distance);
+            ZielOptimized = spielobjekt;
+            int distance = Koordinate.BestimmeEntfernung(this, spielobjekt);
+            int angle = Koordinate.BestimmeRichtung(this, spielobjekt);
             DreheInRichtung(angle);
-            ZielOptimized = spielobject;
+            GeheGeradeaus(distance);
+            
+            
         }
 
         private void GeheZuBauOptimized()
