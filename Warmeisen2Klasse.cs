@@ -85,8 +85,8 @@ namespace AntMe.Player.Warmeisen2
         private Spielobjekt ZielOptimized = null;
         private bool registered = false;
         private bool registeredapfel = false;
-        private bool registeredwanze = false;
-        private WanzenTicket ticketwanze = null;
+        //private bool registeredwanze = false;
+        //private WanzenTicket ticketwanze = null;
         private Ticket ticket = null;
         private ApfelTicket ticketapfel = null;
         #region Kasten
@@ -326,7 +326,7 @@ namespace AntMe.Player.Warmeisen2
                 
             }
 
-            if (Reichweite - ZurückgelegteStrecke - 5 < EntfernungZuBau)
+            if (Reichweite - ZurückgelegteStrecke - 20 < EntfernungZuBau)
             {
                 GeheZuBauOptimized();
             }
