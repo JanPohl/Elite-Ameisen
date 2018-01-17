@@ -43,7 +43,7 @@ namespace AntMe.Player.Warmeisen2
             if (!known)
             {
                 //zuckers.Add(zucker);
-                int mengeTickets = zucker.Menge / 10;
+                int mengeTickets = zucker.Menge / 20;
                 for (int i = 0; i < mengeTickets; i++)
                 {
                     tickets.Enqueue(item: new Ticket() { Zucker = zucker });

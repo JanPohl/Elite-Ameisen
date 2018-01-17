@@ -101,11 +101,11 @@ namespace AntMe.Player.Warmeisen2
         /// <returns>Name der Kaste zu der die geborene Ameise gehören soll</returns>
         public override string BestimmeKaste(Dictionary<string, int> anzahl)
         {
-            if (anzahl["Verteidiger"] < 21)
+            if (anzahl["Verteidiger"] <= 20)
             {
                 return "Verteidiger";
             }
-            else if (anzahl["ApfelSammler"] < 16)
+            else if (anzahl["ApfelSammler"] <= 15)
             {
                 return "ApfelSammler";
             }
@@ -214,26 +214,26 @@ namespace AntMe.Player.Warmeisen2
 
 
 
-            //if (!registeredwanze && Kaste == "Verteidiger")
-            //{
-            //    Wanzenmanager.InstanceWanze.RegisterVerteidigerAmeise(this);
-            //    registeredwanze = true;
-            //}
+            if (!registeredwanze && Kaste == "Verteidiger")
+            {
+                Wanzenmanager.InstanceWanze.RegisterVerteidigerAmeise(this);
+                registeredwanze = true;
+            }
 
-            //if (Kaste == "Verteidiger")
-            //    ticketwanze = Wanzenmanager.InstanceWanze.GetWanzenTicket();
+            if (Kaste == "Verteidiger")
+                ticketwanze = Wanzenmanager.InstanceWanze.GetWanzenTicket();
 
 
-            //if (ticketwanze == null && Kaste == "Verteidiger")
-            //{
-            //    DreheUmWinkel(Zufall.Zahl(-30, 30));
-            //    GeheGeradeaus(100);
-            //}
+            if (ticketwanze == null && Kaste == "Verteidiger")
+            {
+                DreheUmWinkel(Zufall.Zahl(-30, 30));
+                GeheGeradeaus(100);
+            }
 
-            //if (ticketwanze != null && Kaste == "Verteidiger")
-            //{
-            //    GeheZuZielOptimized(ticketwanze.Wanze);
-            //}
+            if (ticketwanze != null && Kaste == "Verteidiger")
+            {
+                GeheZuZielOptimized(ticketwanze.Wanze);
+            }
 
             //if (!registeredapfel && !registered && Kaste == "Scout")
             //{
@@ -504,10 +504,10 @@ namespace AntMe.Player.Warmeisen2
             //    SprüheMarkierung(1, 200);
             //    GreifeAn(wanze);
             //}
-            //if (Kaste == "Verteidiger")
-            //{
-            //    Wanzenmanager.InstanceWanze.ReportWanze(wanze);
-            //}
+            if (Kaste == "Verteidiger")
+            {
+                Wanzenmanager.InstanceWanze.ReportWanze(wanze);
+            }
 
             if (AnzahlAmeisenDerSelbenKasteInSichtweite >= 5 && Kaste == "Verteidiger")
             {               
@@ -549,11 +549,11 @@ namespace AntMe.Player.Warmeisen2
         /// <param name="wanze">Angreifende Wanze</param>
         public override void WirdAngegriffen(Wanze wanze)
         {
-            if (AktuelleLast > 0 && Kaste == "ZuckerSammler")
-            {
-                LasseNahrungFallen();
-                GreifeAn(wanze);
-            }
+            //if (AktuelleLast > 0)
+            //{
+            //    LasseNahrungFallen();
+            //    GreifeAn(wanze);
+            //}
             //else if (AktuelleLast == 0)
             //{
             //    GreifeAn(wanze);
@@ -561,7 +561,6 @@ namespace AntMe.Player.Warmeisen2
         }
 
         #endregion
-        
         private void GeheZuZielOptimized(Spielobjekt spielobject)
         {
             int distance = Koordinate.BestimmeEntfernung(this, spielobject);
